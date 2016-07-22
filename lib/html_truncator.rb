@@ -13,7 +13,6 @@ class HTML_Truncator
     opts = DEFAULT_OPTIONS.merge(opts)
     doc = Nokogiri::HTML::DocumentFragment.parse(text)
     str, _, opts = doc.truncate(max, opts)
-    eval "class <<str; def html_truncated?; #{opts[:was_truncated]} end end"
     str
   end
 

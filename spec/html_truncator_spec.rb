@@ -101,11 +101,6 @@ describe HTML_Truncator do
     HTML_Truncator.truncate("<p>Honorificabilitudinitatibus</p>", 5, :ellipsis => '...', :length_in_chars => true).should == "<p>Honor...</p>"
   end
 
-  it "says if a string was truncated" do
-    HTML_Truncator.truncate(short_text, 10).should_not be_html_truncated
-    HTML_Truncator.truncate(long_text, 10).should be_html_truncated
-  end
-
   it "doesn't unescape html entities" do
     txt = <<EOS
 <p>Dans le wiki, le \"titre\" <strong>Log des modifications</strong> s'étale sur toute la largeur de l'écran et la barre de saisie dépasse allégrement la taille dudit écran.<br />
